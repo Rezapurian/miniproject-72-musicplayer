@@ -1,0 +1,82 @@
+@font-face {
+    font-family: vazir;
+    src: url(/font/Vazir-Regular.woff) format("woff");
+}
+*{
+    font-family: vazir;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+   min-height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   user-select: none;
+   background-color: #FFF;
+}
+.music-player {
+    width: 500px;
+    height: 750px;
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.music-name h2 {
+    color: #FFF;
+    padding: 40px 0;
+}
+.music-cover img {
+    display: block;
+    width: 350px;
+    height: 350px;
+    margin: 0 75px;
+    border-radius: 50%;
+    border-radius: 0px 0px 38px -10px #2980b9;
+    animation: glow .5s ease-in-out infinite alternate;
+    animation-play-state: paused;
+}    
+@keyframes glow {
+    from {
+    box-shadow: 0px 0px 38px -10px #2980b9;
+    } to {
+    box-shadow: 0px 0px 38px 10px #2980b9;
+    }
+}
+.music-timer {
+    display: flex;
+    align-items: center;
+}
+.music-timer span:first-child {
+    margin-left: 8px;
+    color: #FFF;
+}
+.music-timer span:last-child {
+    margin-left: 3px;
+    color: #FFF;
+}
+.music-timer input {
+    width: 77%;
+    height: 2px;
+    appearance: none;
+    background-color: rgba(255, 255, 255, .2);
+    margin: 60px 8px;
+    cursor: pointer;
+}
+.music-timer input::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #FFF;
+}
+.btns {
+    margin: 0 20px 0 0;
+}
+.btns i {
+    font-size: 2rem;
+    margin: 0 20px;
+    color: #FFF;
+    cursor: pointer;
+}
