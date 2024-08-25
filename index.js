@@ -33,6 +33,7 @@ musicName.textContent = musics[currentMusic].name;
 
 audio.addEventListener("canplay", e => {
     range.max = audio.duration;
+    setInterval(timeupdate, 1000);
 });
 
 function timeupdate() {
@@ -44,18 +45,12 @@ function timeupdate() {
     totalTime.textContent = `${durationMinutes}:${durationSeconds.toString().padStart(2, 0)}`;
 }
 
-setInterval(timeupdate);
-
 audio.addEventListener("timeupdate", e => {
     range.value = audio.currentTime;
-    timeupdate();
 });
 
 range.addEventListener("input", e => {
     audio.currentTime = range.value;
-    if (range.value.length) {
-        playBtn.classList.replace("fa-play", "fa-pause");
-    }
 });
 
 playBtn.addEventListener("click", e => {
